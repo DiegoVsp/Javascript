@@ -1,0 +1,274 @@
+
+Crie uma função que dado o objeto a seguir:
+	var endereco = {
+ 	rua: "Rua dos pinheiros",
+ 	numero: 1293,
+ 	bairro: "Centro",
+ 	cidade: "São Paulo",
+ 	uf: "SP"
+	};
+	
+
+
+	<script>
+       	   var endereco={
+           rua:"Rua dos pinheiros",
+           numero: 1293,
+           bairro:"Centro",
+           cidade:"São Paulo",
+           uf: "SP"
+        };
+        
+        endCompl(endereco.rua,endereco.numero,endereco.bairro,endereco.cidade,endereco.uf);
+
+
+        function endCompl(rua,numero,bairro,cidade,uf){
+            end = console.log(`O usuário mora em ${cidade} / ${uf} , no bairro ${bairro}, na rua "${rua}" 	    com o nº ${numero}.`);
+            return end;
+        }
+        
+        
+       
+    </script>
+
+-------------------------
+3º exercício
+Escreva uma função que verifique se o vetor de habilidades passado possui a habilidade "Javascript"
+e retorna um booleano true/false caso exista ou não.
+
+ function temHabilidade(skill){
+            return(skills.indexOf(skill)>=0);            
+           
+            
+        }
+        var skills =["Javascript","ReactJS","React Native"];
+
+        var res = temHabilidade("ReactJS");
+        console.log(res);
+------------------
+
+4 - Escreva uma função que dado um total de anos de estudo retorna o quão experiente o usuário é:
+<script>
+        
+
+       function experiencia(anos){
+        if(anos >=0 && anos <=1){
+            console.log("Iniciante");
+        }else if(anos >1 && anos <=3){
+            console.log("Intermediário");
+        }else if(anos >3 && anos <=6){
+            console.log("Avaçado");
+        }else{
+            console.log("Jedi Master");
+        }
+
+        
+        
+       }
+
+       var anosDeEstudo=5;
+       experiencia(anosDeEstudo);
+
+    </script>
+
+
+
+
+-----------
+function result(user){
+               for(r of user){
+                  console.log ("O "+r.nome+" possui as habilidades: "+r.habilidades.join());
+               }
+           }
+       var usuarios = [
+           {
+               nome:"Diego",
+               habilidades:["Javascript", "ReactJS", "Redux"]
+           },
+           {
+               nome:"Gabriel",
+               habilidades:["VueJS", "Ruby on Rails", "Elixir"] 
+           }
+           ];
+
+           
+
+           var resultado = result(usuarios);
+
+--------------
+Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+aparecer na tela.
+
+
+
+<div id="app">
+        <button class="botao">Clique Aqui</button>
+        <div class="box"></div>
+    </div>
+
+    <script>
+        var btnElement = document.querySelector('button.botao');
+       
+            btnElement.onclick = function () {
+            
+            var boxElement = document.createElement('div');
+            boxElement.style.width = 200;
+            boxElement.style.height = 200;
+            boxElement.style.backgroundColor = '#f00';
+            boxElement.style.margin = 10;
+            
+            document.querySelector('.box').appendChild(boxElement);
+            
+        }
+
+
+
+    </script>
+
+
+-----------------
+Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
+algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:
+
+
+<div id="app">
+        <button class="botao">Clique Aqui</button>
+        <div class="box"></div>
+    </div>
+
+    <script>
+        var btnElement = document.querySelector('button.botao');
+
+        btnElement.onclick = function () {
+
+            var boxElement = document.createElement('div');
+            boxElement.style.width = 200;
+            boxElement.style.height = 200;
+            boxElement.style.backgroundColor = '#f00';
+            boxElement.style.margin = 10;
+            
+            boxElement.addEventListener('mouseover',()=>{
+                var newColor = getRandomColor();
+                boxElement.style.backgroundColor=newColor;
+            })
+
+            document.querySelector('.box').appendChild(boxElement);
+
+        }
+        
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        
+
+
+
+    </script>
+
+
+
+-----
+3º exercício
+A partir do seguinte vetor:
+var nomes = ["Diego", "Gabriel", "Lucas"];
+Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
+● Diego
+● Gabriel
+● Lucas
+
+<div id="app">
+        <ul></ul>
+    </div>
+
+    <script>
+       var nomes=["Diego", "Gabriel", "Lucas"];
+       
+       var listaElement = document.querySelector('ul');
+
+       for(nomes of nomes){
+           var liElement = document.createElement('li');
+           var textElement=document.createTextNode(nomes);
+
+           liElement.appendChild(textElement);
+           listaElement.appendChild(liElement);
+       }
+
+
+
+    </script>
+---------
+
+4º exercício
+Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir:
+<input type="text" name="nome">
+<button onClick="adicionar()">Adicionar</button>
+Ao clicar no botão, a função adicionar() deve ser disparada adicionando um novo item a lista de
+nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
+demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique
+
+<div id="app">
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>
+        <ul></ul>
+    </div>
+
+    <script>
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+
+        var listaElement = document.querySelector('ul');
+        var inputElement = document.querySelector('input')
+
+        // for (nomes of nomes) {
+        //     var liElement = document.createElement('li');
+        //     var textElement = document.createTextNode(nomes);
+
+        //     liElement.appendChild(textElement);
+        //     listaElement.appendChild(liElement);
+        // }
+        function add(texto){
+            var liElement = document.createElement('li');
+            var textElement=document.createTextNode(texto);
+
+            liElement.appendChild(textElement);
+            listaElement.appendChild(liElement);
+        }
+ 
+        function adicionar(){
+            add(inputElement.value);
+            inputElement.value="";
+        }
+
+
+        for(nomes of nomes){
+            add(nomes);
+        }
+
+
+    </script>
+
+
+
+------------
+
+ <div id="app">
+        <input type="text" name="nome" id="nome">
+        <button id="exibir">Exibir</button>
+        <ul></ul>
+    </div>
+    
+    <script>
+    document.getElementById('exibir').addEventListener('click',function(){
+        const nome = document.getElementById('nome').value;
+        alert('O nome completo é: '+nome);
+    })  
+     
+
+
+    </script>
