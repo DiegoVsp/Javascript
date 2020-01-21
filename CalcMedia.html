@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+                Pagina Webzin
+        </title>
+    </head>
+    <body>
+        <h1>Calcular média</h1>
+        <div>
+            <input type="text" name="nome" id="nome" placeholder="Digite aqui seu nome">
+        </div>
+        <div>
+            <input type="number" name="nota1" id="nota1" placeholder="Nota 1">
+        </div>
+        <div>
+            <input type="number" name="nota2" id="nota2" placeholder="Nota 2">
+        </div>
+        <div>
+            <input type="submit" name="confirmar" onclick="maiuscula(), media()" id="confirmar" value="Confirmar">
+        </div>
+
+        <script>
+        var botao = document.getElementById("confirmar")
+        
+        
+        
+        function maiuscula (n){
+            var n = document.getElementById("nome")
+            var name = n.value;
+            var maior = name.toUpperCase();
+            alert(maior)
+           
+        }
+        
+
+        function media(n1,n2){
+            var n1 = document.getElementById("nota1")
+            var n2 = document.getElementById("nota2")
+            var not1 = Number(n1.value);            
+            var not2 = Number(n2.value);
+            var media = (not1+not2)/2;
+            alert(media);
+        }
+        </script>
+        
+    </body>
+</html>
