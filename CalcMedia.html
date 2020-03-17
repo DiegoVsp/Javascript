@@ -18,6 +18,9 @@
         <div>
             <input type="submit" name="confirmar" onclick="maiuscula(), media()" id="confirmar" value="Confirmar">
         </div>
+        <div class="res">
+           
+        </div>
 
         <script>
         var botao = document.getElementById("confirmar")
@@ -28,7 +31,9 @@
             var n = document.getElementById("nome")
             var name = n.value;
             var maior = name.toUpperCase();
-            alert(maior)
+            var resultado = document.querySelector(".res");
+            resultado.innerHTML="";
+            resultado.innerHTML=maior;           
            
         }
         
@@ -41,6 +46,7 @@
             var media = (not1+not2)/2;
             alert(media);
         }
+
         </script>
         
     </body>

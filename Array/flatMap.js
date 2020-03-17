@@ -8,7 +8,8 @@ const escola = [
             nome: 'Ana',
             nota: 9.3
         }]
-    },{
+    },
+    {
         nome: 'Turma M2',
         alunos:[{
             nome: 'Rebeca',
@@ -27,9 +28,9 @@ const escola = [
 
     console.log([].concat([ 8.1, 9.3 ], [ 8.9, 7.3 ]))
     
-    Array.prototype.flatMap = function(callback){
-       return Array.prototype.concat.apply([],this.map(callback))
-    }
+    // Array.prototype.flatMap = function(callback){
+    //    return Array.prototype.concat.apply([],this.map(callback))
+    // }
 
     const nota2 = escola.flatMap(getNotaDaTurma)
     console.log(nota2)
