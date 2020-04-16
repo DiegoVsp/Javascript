@@ -26,7 +26,7 @@ const escola = [
     const notas1 = escola.map(getNotaDaTurma)
     console.log(notas1)
 
-    console.log([].concat([ 8.1, 9.3 ], [ 8.9, 7.3 ]))
+    // console.log([].concat([ 8.1, 9.3 ], [ 8.9, 7.3 ]))
     
     // Array.prototype.flatMap = function(callback){
     //    return Array.prototype.concat.apply([],this.map(callback))
