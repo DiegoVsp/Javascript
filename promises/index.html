@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROMISES</title>
+</head>
+
+<body>
+  <script>
+    // SINGLE THRED
+    // IO não bloqueante
+
+    // Assincrona 
+    // Ex: Banco Pegar o Cep
+    // Cep -> Correios 
+
+    // Promises
+
+    // PENDENTE
+    // REALIZADO
+    // REJEITADO
+    // ESTABELECIDO
+
+
+    function jaRealizado() {
+      return Promise.resolve('14810430')
+    }
+
+    function jaRejeitada() {
+      return Promise.reject(`ERRO`)
+    }
+
+
+    jaRealizado().then(function (data) {
+      console.log('Promise resolvida', data)
+    })
+    jaRejeitada().catch(function () {
+      console.log('Rejeitado')
+    })
+
+
+    function promisetrabalhada() {
+      return new Promise(function (resolve, reject) {
+        setTimeout(() => {
+          resolve('Olá mundo!')
+        }, 1000);
+      })
+    }
+    // promiseTrabalhada().then(function(message){
+    //   console.log(message)
+    // })
+
+
+    // =================================
+
+    function pegaCep(cep) {
+      return fetch(`https://viacep.com.br/ws/${cep}/json/`)
+    }
+
+    function extraiEndereco(data) {
+      return data.json()
+    }
+
+    function imprimir(endereco) {
+      console.log(endereco)
+    }
+
+    function tratarErro(err){
+      console.log('Aconteceu algum erro', erro)
+    }
+
+    jaRealizado()
+      .then(pegaCep)
+      .then(extraiEndereco)
+      .then(imprimir)
+      .catch(tratarErro)
+      .finally(function(){
+        console.log('sempre executado')
+      })
+
+      function demora500ms() {
+        return new Promise((resolve,reject) => {
+          setTimeout(() => {
+            resolve('demora500ms')
+          }, 500);
+        })
+      }
+      function demora200ms() {
+        return new Promise((resolve,reject)=> {
+          setTimeout(() => {
+            resolve('demora 200ms')
+          }, 200);
+        })
+      }
+      // Promise.all([
+      //   demora500ms(),
+      //   demora200ms(),
+      // ]).then(console.log)
+
+
+      // race retorna sempre o valor da primeira resolvida ou de alguma rejeitada que for resolvida primeiro
+      Promise.race([
+        jaRealizado(),
+        demora500ms(),
+        demora200ms(),
+        jaRejeitada()
+      ]).then(function(dados){
+        console.log(dados)
+      }, function(rejeitado){
+        console.log(rejeitado)
+      })
+
+  </script>
+
+
+
+</body>
+
+</html>
