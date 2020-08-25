@@ -4,7 +4,7 @@ const axios = require('axios');// axios é um client http - ele faz requisiçõe
 const chineses = f => f.pais === 'China';
 const mulher = f => f.genero === 'F';
 const menorSalario = (funcionario, funcionarioAtual)=>{
-    return funcionario.salario < funcionarioAtual.salario?funcionario:funcionarioAtual;
+    return funcionario.salario < funcionarioAtual.salario ? funcionario : funcionarioAtual;
 }
 
 
