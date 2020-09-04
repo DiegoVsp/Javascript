@@ -14,21 +14,26 @@ module.exports = {
     },
     optimization: {
         minimizer: [
+            // minificador JS
             new UglifyJsPlugin({
                 cache: true,
                 parallel: true,
                 sourceMap: true
             }),
+            // minificador CSS
             new OptimizeCSSAssetsPlugin({})
         ]
     },
     output: {
+        // pasta de saída
         filename: 'app.js',
         path: __dirname + '/build'
     },
     plugins: [
+        // plugin extrair CSS
         new MiniCssExtractPlugin({ filename: 'estilo.css' }),
         new CopyWebpackPlugin([
+            // copia as páginas html e imgs pra pasta build
             { context: 'src/', from: '**/*.html' },
             { context: 'src/', from: 'imgs/**/*' }
         ])
