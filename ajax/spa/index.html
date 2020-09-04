@@ -26,14 +26,14 @@
     <div class="pagina"></div>
     <script>
         function navegarViaAjax(url, seletor, push = true) {
-            if(!url || !seletor) return 
+            if (!url || !seletor) return
             const elemento = document.querySelector(seletor)
             fetch(url)
                 .then(resp => resp.text())
                 .then(html => {
-                    elemento.innerHTML = html 
-                    if(push) {
-                        history.pushState({seletor}, null, url)
+                    elemento.innerHTML = html
+                    if (push) {
+                        history.pushState({ seletor }, null, url)
                     }
                 })
         }
@@ -47,8 +47,8 @@
             }
         })
         window.onpopstate = e => {
-            if(e.state){
-                navegarViaAjax(window.location.href, e.state.seletor, false )
+            if (e.state) {
+                navegarViaAjax(window.location.href, e.state.seletor, false)
             }
         }
     </script>

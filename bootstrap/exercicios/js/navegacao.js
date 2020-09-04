@@ -12,6 +12,13 @@
             .then(resp => resp.text())
             .then(html => {
                 destino.innerHTML = html
+                // para funcionar o tooltip
+                // chamar o eval com o regex     \/
+                const resultado = html.match(/\<script\>([\s\S]*)\<\/script\>/)
+                
+                if(resultado && resultado.length >= 2){
+                    eval(resultado[1])
+                }
             })
     }
 
