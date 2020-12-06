@@ -58,25 +58,86 @@
 // console.log(baskara(1,12,-13))
 
 // ex8
-let pontuacaoAnterior = "10, 20, 20, 8, 25, 3, 0, 30, 1"
+// let pontuacaoAnterior = "10, 20, 20, 8, 25, 3, 0, 30, 1"
 
-function avaliarPont(pontuacoes){
-let pontuacao = pontuacoes.split(', ') 
-let melhorPontuacao = pontuacao[0]
-let piorPontuacao = pontuacao[0]
-let quebraRecorde = 0
-let piorJogo = 1;
+// function avaliarPont(pontuacoes){
+// let pontuacao = pontuacoes.split(', ') 
+// let melhorPontuacao = pontuacao[0]
+// let piorPontuacao = pontuacao[0]
+// let quebraRecorde = 0
+// let piorJogo = 1;
 
-for(let i = 0; i< pontuacao.length; i++){
-  if(pontuacao[i]>melhorPontuacao){
-    melhorPontuacao=pontuacao[i];
-    quebraRecorde++
-    
-  }else if(pontuacao[i]<piorPontuacao){
-    piorPontuacao = pontuacao[i];
-    piorJogo = i+1;
-  }
-}
-console.log(quebraRecorde,piorJogo)
-}
-avaliarPont(pontuacaoAnterior)
+// for(let i = 0; i< pontuacao.length; i++){
+//   if(pontuacao[i]>melhorPontuacao){
+//     melhorPontuacao=pontuacao[i];
+//     quebraRecorde++
+
+//   }else if(pontuacao[i]<piorPontuacao){
+//     piorPontuacao = pontuacao[i];
+//     piorJogo = i+1;
+//   }
+// }
+// console.log(quebraRecorde,piorJogo)
+// }
+// avaliarPont(pontuacaoAnterior)
+
+// function comprimentar(arg) {
+//   console.log(`Olá, ${arg}!`)
+// }
+// comprimentar("Leonardo")
+
+// function converterIdadeEmDias(idade) {
+
+//   let ano = new Date().getFullYear();
+//   let anoDias = 365;
+//   return idade * anoDias
+// if(ano % 4 == 0){
+//   anoDias = 366
+//   console.log(`Bissexto e tem ${anoDias} dias`)
+// }else if(ano % 400 == 0){
+//   anoDias=366
+//   console.log(`Bissexto e tem ${anoDias} dias`)
+// }else if (ano % 100 != 0){
+//   anoDias=365
+//   console.log(`Não Bissexto e tem ${anoDias} dias`)
+// }
+// }
+// console.log(converterIdadeEmDias(70))
+
+// function calcularSalario(horasTrab, salHora) {
+//   let salario = horasTrab * salHora;
+//   console.log(`Salário igual a R$ ${salario}`)
+// }
+// calcularSalario(30, 40.5)
+
+// function mes(n) {
+//   switch (n) {
+//     case 1:
+//       return 'Janeiro'
+//     case 2:
+//       return 'Fevereiro'
+//     case 3:
+//       return 'Março'
+//     case 4:
+//       return 'Abril'
+//     case 5:
+//       return 'Maio'
+//     case 6:
+//       return 'Junho'
+//     case 7:
+//       return 'Julho'
+//     case 8:
+//       return 'Agosto'
+//     case 9:
+//       return 'Setembro'
+//     case 10:
+//       return 'Outubro'
+//     case 11:
+//       return 'Novembro'
+//     case 12:
+//       return 'Dezembro'
+//     default:
+//       return `Inválido`       
+//   }
+// }
+// console.log(mes(4))
