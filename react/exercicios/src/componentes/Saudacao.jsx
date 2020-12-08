@@ -12,13 +12,13 @@ export default class Saudacao extends Component {
     this.setTipo = this.setTipo.bind(this)
   }
 
-  setTipo(e) {
+  // setTipo(e) {
     // let i = 0;
     // setInterval(() => {
     //   this.setState({ tipo: ++i })
     // }, 1000)
-    this.setState({ tipo: e.target.value })
-  }
+  //   this.setState({ tipo: e.target.value })
+  // }
   setNome(e) {
     this.setState({ nome: e.target.value })
   }

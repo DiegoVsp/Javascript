@@ -141,3 +141,53 @@
 //   }
 // }
 // console.log(mes(4))
+
+// function maiorOuIgual (n1, n2) {
+//   if(n1>n2){
+//     return `${n1} é maior que ${n2}`
+//   }else if(n1<n2){
+//     return `${n1} é menor que ${n2}`
+//   }else {
+//     return `números iguais!`
+//   }
+// }
+// console.log(maiorOuIgual(4,4))
+
+// function inverso(p) {
+//   let tipo = typeof p
+
+//   if(tipo == "boolean") return !p
+//   else if(tipo == "number") return -p
+//   else 
+//     return `${p} tem o tipo ${tipo}` 
+// }
+// console.log(inverso(false))
+
+// function multi(n1,n2){
+//   let r = 0
+//   for(let i =0; i<n2;i++){
+//     r+=n1;
+//   }
+//   return r
+// }
+// console.log(multi(3,3))
+
+// function repetir(n1,vezes){
+//   let arr = []
+//   for(let i=0;i<vezes;i++){
+//     arr.push(n1)
+//   }
+//   return arr
+// }
+// console.log(repetir(7,3))
+
+let elementos = [4,2,5,8]
+function receberPrimeiroEUltimo(elementos) {
+  const indicePrimeiro = 0;
+  const indiceUltimo = elementos.length - 1
+
+  const primeiroElemento = elementos[indicePrimeiro]
+  const ultimoElemento = elementos[indiceUltimo]
+  return [primeiroElemento, ultimoElemento]
+}
+console.log(receberPrimeiroEUltimo(elementos))
