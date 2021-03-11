@@ -161,7 +161,7 @@
 //   else 
 //     return `${p} tem o tipo ${tipo}` 
 // }
-// console.log(inverso(false))
+// console.log(inverso(-10))
 
 // function multi(n1,n2){
 //   let r = 0

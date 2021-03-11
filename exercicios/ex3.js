@@ -19,7 +19,7 @@ console.log(filtrarNumeros(v))
 function objetoParaArray(objeto) {
   let arr = []
   for (let chave in objeto) {
-    arr.push([chave, objeto[chave]])
+    arr.push(chave, objeto[chave])
   }
   return arr
 }
@@ -45,10 +45,64 @@ function Pares(arr2) {
 
 console.log(Pares(arr2))
 
-// function receberSomenteOsParesDeIndicesPares(numeros) {
-//   return numeros.filter((numero, indice) => {
-//     const numeroPar = numero % 2 === 0
-//     const indicePar = indice % 2 === 0
-//     return numeroPar && indicePar
-//   })
-// }
+function receberSomenteOsParesDeIndicesPares(numeros) {
+  return numeros.filter((numero, indice) => {
+    const numeroPar = numero % 2 === 0
+    const indicePar = indice % 2 === 0
+    return numeroPar && indicePar
+  })
+}
+
+let n = receberSomenteOsParesDeIndicesPares([4, 6, 2, 3, 5, 6, 7])
+console.log(n)
+
+function filtrarNumeros(numeros) {
+  let res = []
+  for (let n of numeros) {
+    if (typeof n === "number") {
+      res.push(n)
+    }
+  }
+  return res
+}
+
+let arra3 = ['Diego', 1, 'LALA', 3, 4, 6];
+
+console.log(filtrarNumeros(arra3))
+
+
+function checarAnoBissexto(ano) {
+  return new Date(ano, 1, 29).getDate() === 29;
+}
+
+console.log(checarAnoBissexto(2020))
+
+let array5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 22]
+function media(aray) {
+  let resultado = aray.reduce((n1, n2) => n1 += n2)
+  return resultado / aray.length
+
+}
+console.log(media(array5))
+
+function menorNumero(array) {
+  let menorN = array[0]
+
+  for (let num in array) {
+    if (array[num] < menorN) {
+      menorN = array[num]
+    }
+  }
+  return menorN
+}
+console.log(menorNumero([1, 3, 5, 8, 0, 9, 11]))
+
+// segunda maneira
+function menorNumero(numeros) {
+  return numeros.reduce((anterior, atual) => anterior < atual ? anterior : atual)
+  }
+// terceira maneira  
+function menorNumero(numeros) {
+  return Math.min(...numeros);
+  }
+  
